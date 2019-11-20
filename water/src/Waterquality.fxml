@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+   <children>
+      <AnchorPane prefHeight="800.0" prefWidth="500.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="147.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../샘플.png" />
+               </image>
+            </ImageView>
+            <TextArea editable="false" layoutY="33.0" prefHeight="95.0" prefWidth="500.0" text="현재 선택한 정수장" />
+            <Button layoutX="377.0" layoutY="155.0" mnemonicParsing="false" text="상세보기" />
+            <TextField editable="false" layoutX="40.0" layoutY="470.0" prefHeight="29.0" prefWidth="365.0" text="'수질정보측정시간' 기준" />
+            <TextField editable="false" layoutX="40.0" layoutY="510.0" prefHeight="29.0" prefWidth="365.0" text="정수장 주소" />
+            <TextField editable="false" layoutX="40.0" layoutY="551.0" prefHeight="29.0" prefWidth="88.0" text="잔류염소" />
+            <TextField editable="false" layoutX="147.0" layoutY="551.0" prefHeight="29.0" prefWidth="88.0" text="pH" />
+            <TextField editable="false" layoutX="250.0" layoutY="551.0" prefHeight="29.0" prefWidth="88.0" text="탁도" />
+            <TextField layoutX="42.0" layoutY="589.0" prefHeight="73.0" prefWidth="297.0" text="각 정보의 상태에 따른 이미지 세개" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
