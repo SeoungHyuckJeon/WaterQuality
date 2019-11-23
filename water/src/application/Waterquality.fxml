@@ -22,8 +22,8 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="lblSurveyTime" layoutX="40.0" layoutY="470.0" prefHeight="30.0" prefWidth="420.0" text="'수질정보측정시간' 기준" />
-            <Label fx:id="lblPlantAddress" layoutX="40.0" layoutY="510.0" prefHeight="30.0" prefWidth="420.0" text="정수장 주소" />
+            <Label fx:id="lblSurveyTime" layoutX="40.0" layoutY="510.0" prefHeight="30.0" prefWidth="420.0" text="'수질정보측정시간' 기준" />
+            <Label fx:id="lblPlantAddress" layoutX="40.0" layoutY="470.0" prefHeight="30.0" prefWidth="420.0" text="정수장 주소" />
             <TextField fx:id="textfield_CurrentPlant" alignment="CENTER" layoutY="50.0" prefHeight="100.0" prefWidth="500.0" text="정수장을 선택해주십시오.">
                <font>
                   <Font size="30.0" />
