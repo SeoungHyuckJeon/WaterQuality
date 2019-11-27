@@ -3,6 +3,8 @@ package application;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -17,9 +19,9 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class getsupplyLgldCode {
+public class getAPIData {
 	static String ServiceKey = "jKq7bWPMdGPSHRToLGkotTffxNPQFoZ88H%2FjbH%2BSWSz836fHMXAaKVgKnvtxAHLVWZ0%2FqQzXJIViKEW2jOk1Og%3D%3D";
-	static String uurl = "http://apis.data.go.kr/B500001/rwis/waterQuality/supplyLgldCode/list?serviceKey="
+	static String URL_supplylgld = "http://apis.data.go.kr/B500001/rwis/waterQuality/supplyLgldCode/list?serviceKey="
 			+ ServiceKey +"&numOfRows=758&pageNo=1";
 	
 	private static String getTagValue(String tag, Element eElement) {
@@ -30,7 +32,7 @@ public class getsupplyLgldCode {
 	    return nValue.getNodeValue();
 	}
 	
-	public static void getPlantData()
+	public static void getPlantData(String url)
 	{
         try {
         	// 자신의 static 매소드를 가지고 객체를 생성 : 싱글톤 패턴
@@ -39,7 +41,7 @@ public class getsupplyLgldCode {
         	DocumentBuilder documentbuilder = factory.newDocumentBuilder();
         	//문자열을 InputStream으로 변환
 //        	InputStream is = new ByteArrayInputStream(sb.toString().getBytes());
-        	Document doc = documentbuilder.parse(uurl);
+        	Document doc = documentbuilder.parse(url);
         	//sb를 메모리에 놓고 루트를 element에 저장
         	Element element = doc.getDocumentElement();
         	
@@ -51,13 +53,13 @@ public class getsupplyLgldCode {
 					Element eElement = (Element) nNode;
 					if(getTagValue("lgldFullAddr", eElement).contains("시"))
 					{
-						System.out.println("######################");
+						//System.out.println("######################");
 						//System.out.println(eElement.getTextContent());
 						//System.out.println("동  : " + getTagValue("addrName", eElement));
 						//System.out.println("정수장  : " + getTagValue("fcltyMngNm", eElement));
 						//System.out.println("정수장번호 : " + getTagValue("fcltyMngNo", eElement));
 						//System.out.println("뭐지모름  : " + getTagValue("lgldCode", eElement));
-						System.out.println("주소  : " + getTagValue("lgldFullAddr", eElement));
+						//System.out.println("주소  : " + getTagValue("lgldFullAddr", eElement));
 						//System.out.println("번호  : " + getTagValue("sujCode", eElement));
 						//System.out.println("뭔번호냐  : " + getTagValue("upprLgldCode", eElement));
 					}
@@ -67,7 +69,21 @@ public class getsupplyLgldCode {
 	}
 	
     public static void main(String [] args) throws IOException {
-    	getPlantData();
+    	getPlantData(URL_supplylgld);
+    	
+    	SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+    	SimpleDateFormat format2 = new SimpleDateFormat("HH");
+    	SimpleDateFormat format3 = new SimpleDateFormat("mm");
+    	
+    	Date time = new Date();
+    	
+    	String time1 = format1.format(time);
+    	String time2 = format2.format(time);
+    	String time3 = format3.format(time);
+    	System.out.println(time1);
+    	System.out.println(time2);
+    	System.out.println(time3);
+
     }
     
 }
