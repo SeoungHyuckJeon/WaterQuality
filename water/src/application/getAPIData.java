@@ -54,12 +54,12 @@ public class getAPIData {
 					if(getTagValue("lgldFullAddr", eElement).contains("시"))
 					{
 						//System.out.println("######################");
-						//System.out.println(eElement.getTextContent());
+						System.out.println(eElement.getTextContent());
 						//System.out.println("동  : " + getTagValue("addrName", eElement));
 						//System.out.println("정수장  : " + getTagValue("fcltyMngNm", eElement));
 						//System.out.println("정수장번호 : " + getTagValue("fcltyMngNo", eElement));
 						//System.out.println("뭐지모름  : " + getTagValue("lgldCode", eElement));
-						System.out.println("주소  : " + getTagValue("lgldFullAddr", eElement));
+						//System.out.println("주소  : " + getTagValue("lgldFullAddr", eElement));
 						//System.out.println("번호  : " + getTagValue("sujCode", eElement));
 						//System.out.println("뭔번호냐  : " + getTagValue("upprLgldCode", eElement));
 					}
