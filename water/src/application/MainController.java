@@ -16,7 +16,6 @@ import javafx.stage.Stage;
 public class MainController {
 	@FXML
 	private Label lblCurrentPlant;
-	Main main = new Main();
 	
 	public void searchAddress() {
 		String address;
@@ -35,13 +34,4 @@ public class MainController {
 		}
 	}
 	
-	public void ClickedbtnSearch() {
-		System.out.println("btn Pressed");
-	}
-	
-	public void PressedSearchBox(KeyEvent event) {
-		if(event.getCode() == KeyCode.ENTER) {
-			System.out.println("btn Pressed");
-		}
-	}
 }
