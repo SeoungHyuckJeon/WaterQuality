@@ -7,6 +7,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
@@ -14,6 +16,7 @@ import javafx.stage.Stage;
 public class MainController {
 	@FXML
 	private Label lblCurrentPlant;
+	Main main = new Main();
 	
 	public void searchAddress() {
 		String address;
@@ -26,8 +29,19 @@ public class MainController {
 			Stage Stage = new Stage();
 			Stage.setScene(scene);
 			Stage.show();
+			Stage.setResizable(false);
 		}	catch (IOException e) {
 			e.printStackTrace();
+		}
+	}
+	
+	public void ClickedbtnSearch() {
+		System.out.println("btn Pressed");
+	}
+	
+	public void PressedSearchBox(KeyEvent event) {
+		if(event.getCode() == KeyCode.ENTER) {
+			System.out.println("btn Pressed");
 		}
 	}
 }
