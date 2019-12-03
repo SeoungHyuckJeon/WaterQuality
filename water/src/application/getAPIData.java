@@ -1,8 +1,5 @@
 package application;
 
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -14,10 +11,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 
 public class getAPIData {
 	static String ServiceKey = "jKq7bWPMdGPSHRToLGkotTffxNPQFoZ88H%2FjbH%2BSWSz836fHMXAaKVgKnvtxAHLVWZ0%2FqQzXJIViKEW2jOk1Og%3D%3D";
@@ -27,7 +21,7 @@ public class getAPIData {
 	private static String getTagValue(String tag, Element eElement) {
 	    NodeList nlList = eElement.getElementsByTagName(tag).item(0).getChildNodes();
 	    Node nValue = (Node) nlList.item(0);
-	    if(nValue == null) 
+	    if(nValue == null)
 	        return null;
 	    return nValue.getNodeValue();
 	}
@@ -43,7 +37,7 @@ public class getAPIData {
 //        	InputStream is = new ByteArrayInputStream(sb.toString().getBytes());
         	Document doc = documentbuilder.parse(url);
         	//sb를 메모리에 놓고 루트를 element에 저장
-        	Element element = doc.getDocumentElement();
+//        	Element element = doc.getDocumentElement();
         	
         	NodeList nList = doc.getElementsByTagName("item");
         	for(int temp =0; temp<nList.getLength();temp++)
