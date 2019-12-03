@@ -14,11 +14,9 @@ import org.w3c.dom.NodeList;
 import java.io.IOException;
 
 public class getAPIData {
-	static String ServiceKey = "jKq7bWPMdGPSHRToLGkotTffxNPQFoZ88H%2FjbH%2BSWSz836fHMXAaKVgKnvtxAHLVWZ0%2FqQzXJIViKEW2jOk1Og%3D%3D";
-	static String URL_supplylgld = "http://apis.data.go.kr/B500001/rwis/waterQuality/supplyLgldCode/list?serviceKey="
-			+ ServiceKey +"&numOfRows=758&pageNo=1";
+	static Main main = new Main();
 	
-	private static String getTagValue(String tag, Element eElement) {
+	static String getTagValue(String tag, Element eElement) {
 	    NodeList nlList = eElement.getElementsByTagName(tag).item(0).getChildNodes();
 	    Node nValue = (Node) nlList.item(0);
 	    if(nValue == null)
@@ -63,7 +61,7 @@ public class getAPIData {
 	}
 	
     public static void main(String [] args) throws IOException {
-    	getPlantData(URL_supplylgld);
+    	getPlantData(main.URL_supplylgld);
     	
     	SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
     	SimpleDateFormat format2 = new SimpleDateFormat("HH");
