@@ -52,9 +52,6 @@ public class SearchboxController {
 			lgldCode.clear();			//배열 초기화
 			getPlantData(Main.URL_supplylgld);
 			initialize();
-			for(String i : lgldCode) {
-				System.out.println(i);
-			}
 		}
 	}
 	
