@@ -94,9 +94,11 @@ public class MainController {
 		hour=Integer.toString(h);
 
 	}
-	
+	@FXML
 	public static void getPlantData()
 	{
+
+		
 		StringBuilder sb = new StringBuilder(); 		//url 조합을 위한 쿼리문
 		URL_waterquality=sb.append("http://apis.data.go.kr/B500001/rwis/waterQuality/list")
 						.append("?serviceKey=" + ServiceKey)
@@ -126,14 +128,12 @@ public class MainController {
         		Node nNode = nList.item(temp);
 				if(nNode.getNodeType() == Node.ELEMENT_NODE){
 					Element eElement = (Element) nNode;
-					
-					fcltyMngNm=application.getAPIData.getTagValue("fcltyMngNm", eElement).toString();
+					lblCurrentPlant.setText(application.getAPIData.getTagValue("fcltyMngNm", eElement));
+					//fcltyMngNm=application.getAPIData.getTagValue("fcltyMngNm", eElement).toString();
 					System.out.println(application.getAPIData.getTagValue("fcltyMngNm", eElement));
 				}
         	}   
         } catch(Exception e) { 
         	e.printStackTrace(); }
-        
-        lblCurrentPlant.setText(fcltyMngNm);
 	}
 }
