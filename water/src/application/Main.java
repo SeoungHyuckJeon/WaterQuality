@@ -22,7 +22,7 @@ import javafx.scene.Scene;
 public class Main extends Application {
 	static String date;
 	static String hour;
-	static String fcltyMngNo;		//법정동 코드
+	static String fcltyMngNo=null;		//정수장 코드
 	static String ServiceKey = "jKq7bWPMdGPSHRToLGkotTffxNPQFoZ88H%2FjbH%2BSWSz836fHMXAaKVgKnvtxAHLVWZ0%2FqQzXJIViKEW2jOk1Og%3D%3D";
 	static String URL_supplylgld = "http://apis.data.go.kr/B500001/rwis/waterQuality/supplyLgldCode/list?serviceKey="
 			+ ServiceKey +"&numOfRows=758&pageNo=1";
@@ -34,7 +34,7 @@ public class Main extends Application {
 			+ "&edTm=" + hour
 			+ "&fcltyMngNo=" + fcltyMngNo
 			+ "&liIndDiv=1";	//선택 = 생활용수
-	//시간계산해서 15분 전이면 hour-1 값을 시간으로 넣어주기
+	//시간계산해서 5분 전이면 hour-1 값을 시간으로 넣어주기
 	getAPIData getAPIData = new getAPIData();
 	
 	@Override
