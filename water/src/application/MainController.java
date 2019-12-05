@@ -17,6 +17,8 @@ public class MainController {
 	@FXML
 	private Label lblCurrentPlant;
 	
+	static Stage Stage = new Stage();
+	
 	public void searchAddress() {
 		String address;
 		
@@ -25,7 +27,7 @@ public class MainController {
 		try {
 			AnchorPane searchPage = FXMLLoader.load(Main.class.getResource("/application/SearchAddress.fxml"));
 			Scene scene = new Scene(searchPage);
-			Stage Stage = new Stage();
+
 			Stage.setScene(scene);
 			Stage.show();
 			Stage.setResizable(false);

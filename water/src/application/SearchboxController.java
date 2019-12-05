@@ -22,6 +22,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 public class SearchboxController {
 	static getAPIData getAPIData = new getAPIData();
@@ -34,14 +35,14 @@ public class SearchboxController {
 	private TableColumn<wppModel, String> column_Address;
 	@FXML
 	private TableColumn<wppModel, String> column_Plant;
-	private ArrayList<String> lgldCode = new ArrayList<String>();
+	private ArrayList<String> fcltyMngNo = new ArrayList<String>();
 	
 	ObservableList<wppModel> wppList = FXCollections.observableArrayList();
 	
 	public void ClickedbtnSearch() {		//검색 버튼 클리시
 		System.out.println("btn Pressed");
 		wppList.clear();				//테이블 내용 초기화
-		lgldCode.clear();				//배열 초기화
+		fcltyMngNo.clear();				//배열 초기화
 		getPlantData(Main.URL_supplylgld);
 		initialize();
 	}
@@ -49,7 +50,7 @@ public class SearchboxController {
 	public void PressedSearchBox(KeyEvent event) {		//TextField에서 엔터눌렀을때
 		if(event.getCode() == KeyCode.ENTER) {		//ENTER입력시
 			wppList.clear();			//테이블 내용 초기화
-			lgldCode.clear();			//배열 초기화
+			fcltyMngNo.clear();			//배열 초기화
 			getPlantData(Main.URL_supplylgld);
 			initialize();
 		}
@@ -75,7 +76,7 @@ public class SearchboxController {
 					{
 						wppList.add(new wppModel(new SimpleStringProperty(application.getAPIData.getTagValue("lgldFullAddr", eElement)),
     							new SimpleStringProperty(application.getAPIData.getTagValue("fcltyMngNm", eElement))));
-						lgldCode.add(application.getAPIData.getTagValue("lgldCode", eElement));
+						fcltyMngNo.add(application.getAPIData.getTagValue("lgldCode", eElement));
 					}
 				}
         	}     	
@@ -91,8 +92,9 @@ public class SearchboxController {
 	
 	public void CellDoubleClick(MouseEvent event) {
 		if(event.getClickCount()>1 && tableview_WPP.getSelectionModel().getSelectedIndex()!=-1) {	//셀이 선택되어있고, 더블클릭했을때 이벤트
-			Main.lgldCode=lgldCode.get(tableview_WPP.getSelectionModel().getSelectedIndex());
-			System.out.println(Main.lgldCode);
+			Main.fcltyMngNo=fcltyMngNo.get(tableview_WPP.getSelectionModel().getSelectedIndex());
+			System.out.println(Main.fcltyMngNo);
+			application.MainController.Stage.close();
 		}
 	}
 }
