@@ -35,17 +35,17 @@
             <Label alignment="CENTER" layoutX="40.0" layoutY="550.0" prefHeight="30.0" prefWidth="130.0" text="잔류염소" />
             <Label alignment="CENTER" layoutX="185.0" layoutY="550.0" prefHeight="30.0" prefWidth="130.0" text="pH" />
             <Label alignment="CENTER" layoutX="330.0" layoutY="550.0" prefHeight="30.0" prefWidth="130.0" text="탁도" />
-            <ImageView fitHeight="130.0" fitWidth="130.0" layoutX="40.0" layoutY="590.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgclVal" fitHeight="130.0" fitWidth="130.0" layoutX="40.0" layoutY="590.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../sampleimage.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="130.0" fitWidth="130.0" layoutX="185.0" layoutY="590.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgpHVal" fitHeight="130.0" fitWidth="130.0" layoutX="185.0" layoutY="590.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../sampleimage.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="130.0" fitWidth="130.0" layoutX="330.0" layoutY="590.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgtbVal" fitHeight="130.0" fitWidth="130.0" layoutX="330.0" layoutY="590.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../sampleimage.png" />
                </image>

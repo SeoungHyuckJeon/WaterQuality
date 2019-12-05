@@ -14,7 +14,6 @@ import org.w3c.dom.NodeList;
 import java.io.IOException;
 
 public class getAPIData {
-	static Main main = new Main();
 	
 	static String getTagValue(String tag, Element eElement) {
 	    NodeList nlList = eElement.getElementsByTagName(tag).item(0).getChildNodes();
@@ -61,7 +60,7 @@ public class getAPIData {
 	}
 	
     public static void main(String [] args) throws IOException {
-    	getPlantData(main.URL_supplylgld);
+    	getPlantData(application.MainController.URL_supplylgld);
     	
     	SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
     	SimpleDateFormat format2 = new SimpleDateFormat("HH");

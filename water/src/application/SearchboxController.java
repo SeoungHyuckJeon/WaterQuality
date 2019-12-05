@@ -13,16 +13,13 @@ import org.w3c.dom.NodeList;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 
 public class SearchboxController {
 	static getAPIData getAPIData = new getAPIData();
@@ -43,7 +40,7 @@ public class SearchboxController {
 		System.out.println("btn Pressed");
 		wppList.clear();				//테이블 내용 초기화
 		fcltyMngNo.clear();				//배열 초기화
-		getPlantData(Main.URL_supplylgld);
+		getPlantData(application.MainController.URL_supplylgld);
 		initialize();
 	}
 	
@@ -51,7 +48,7 @@ public class SearchboxController {
 		if(event.getCode() == KeyCode.ENTER) {		//ENTER입력시
 			wppList.clear();			//테이블 내용 초기화
 			fcltyMngNo.clear();			//배열 초기화
-			getPlantData(Main.URL_supplylgld);
+			getPlantData(application.MainController.URL_supplylgld);
 			initialize();
 		}
 	}
@@ -63,7 +60,7 @@ public class SearchboxController {
         	DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         	//다른 클래스의 객체를 가지고 객체를 생성하면 팩토리 패턴
         	DocumentBuilder documentbuilder = factory.newDocumentBuilder();
-
+        	//XML문서 접근
         	Document doc = documentbuilder.parse(url);
         	
         	NodeList nList = doc.getElementsByTagName("item");
@@ -76,7 +73,7 @@ public class SearchboxController {
 					{
 						wppList.add(new wppModel(new SimpleStringProperty(application.getAPIData.getTagValue("lgldFullAddr", eElement)),
     							new SimpleStringProperty(application.getAPIData.getTagValue("fcltyMngNm", eElement))));
-						fcltyMngNo.add(application.getAPIData.getTagValue("lgldCode", eElement));
+						fcltyMngNo.add(application.getAPIData.getTagValue("fcltyMngNo", eElement));
 					}
 				}
         	}     	
@@ -92,9 +89,11 @@ public class SearchboxController {
 	
 	public void CellDoubleClick(MouseEvent event) {
 		if(event.getClickCount()>1 && tableview_WPP.getSelectionModel().getSelectedIndex()!=-1) {	//셀이 선택되어있고, 더블클릭했을때 이벤트
-			Main.fcltyMngNo=fcltyMngNo.get(tableview_WPP.getSelectionModel().getSelectedIndex());
-			System.out.println(Main.fcltyMngNo);
-			application.MainController.Stage.close();
+			application.MainController.fcltyMngNo=fcltyMngNo.get(tableview_WPP.getSelectionModel().getSelectedIndex());	//정수장 번호 넘겨줌
+			
+			application.MainController.getTime();			//현재 시간 불러오기
+			application.MainController.getPlantData();		//선택한 정수장 수질 불러오기
+			application.MainController.Stage.close();		//검색창 닫기
 		}
 	}
 }
