@@ -8,7 +8,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SearchboxController">
    <children>
-      <AnchorPane layoutY="-9.0" prefHeight="500.0" prefWidth="500.0">
+      <AnchorPane layoutX="10.0" layoutY="-9.0" prefHeight="500.0" prefWidth="500.0">
          <children>
             <TextField fx:id="textfield_SearchBox" layoutX="14.0" layoutY="20.0" onKeyPressed="#PressedSearchBox" prefHeight="40.0" prefWidth="400.0" promptText="주소를 입력하세요." />
             <Button fx:id="btnSearch" layoutX="414.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#ClickedbtnSearch" prefHeight="40.0" prefWidth="72.0" text="검색" />
