@@ -1,8 +1,10 @@
 package application;
 
 import java.io.IOException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.ResourceBundle;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -14,6 +16,7 @@ import org.w3c.dom.NodeList;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -21,9 +24,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class MainController {
+public class MainController implements Initializable{
 	@FXML
-	private static Label lblCurrentPlant;		//정수장 이름
+	private Label lblCurrentPlant;		//정수장 이름
 	@FXML
 	private Label lblPlantAddress;		//정수장 주소
 	@FXML
@@ -42,7 +45,6 @@ public class MainController {
 	static String date;
 	static String hour;
 	static String fcltyMngNo = null;		//불러온 정수장 코드
-	static String fcltyMngNm = null;		//불러온 정수장 이름
 	
 	
 	static String ServiceKey = "jKq7bWPMdGPSHRToLGkotTffxNPQFoZ88H%2FjbH%2BSWSz836fHMXAaKVgKnvtxAHLVWZ0%2FqQzXJIViKEW2jOk1Og%3D%3D";
@@ -131,16 +133,19 @@ public class MainController {
         		Node nNode = nList.item(temp);
 				if(nNode.getNodeType() == Node.ELEMENT_NODE){
 					Element eElement = (Element) nNode;
-					fcltyMngNm=application.getAPIData.getTagValue("fcltyMngNm", eElement);
+					application.WaterData.fcltyMngNm=application.getAPIData.getTagValue("fcltyMngNm", eElement);
 					//fcltyMngNm=application.getAPIData.getTagValue("fcltyMngNm", eElement).toString();
 					System.out.println(application.getAPIData.getTagValue("fcltyMngNm", eElement));
-					System.out.println(fcltyMngNm);
 				}
         	}   
         } catch(Exception e) { 
         	e.printStackTrace();
         }
-        
-        lblCurrentPlant.setText(fcltyMngNm);
+	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		lblCurrentPlant.setText(application.WaterData.fcltyMngNm);
+		
 	}
 }
