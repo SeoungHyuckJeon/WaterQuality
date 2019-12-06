@@ -18,29 +18,31 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class MainController {
 	@FXML
 	private static Label lblCurrentPlant;		//정수장 이름
 	@FXML
-	private static Label lblPlantAddress;		//정수장 주소
+	private Label lblPlantAddress;		//정수장 주소
 	@FXML
-	private static Label lblSurveyTime;		//측정 시간
+	private Label lblSurveyTime;		//측정 시간
 	@FXML
-	private static ImageView imgWaterStatus;	//전체 등급
+	private ImageView imgWaterStatus;	//전체 등급
 	@FXML
-	private static ImageView imgclVal;			//잔류염소 등급
+	private ImageView imgclVal;			//잔류염소 등급
 	@FXML
-	private static ImageView imgpHVal;			//pH 등급
+	private ImageView imgpHVal;			//pH 등급
 	@FXML
-	private static ImageView imgtbVal;			//탁도 등급
+	private ImageView imgtbVal;			//탁도 등급
 	
-	static Stage Stage = new Stage();
+	public static Stage Stage = new Stage();
 	
 	static String date;
 	static String hour;
-	static String fcltyMngNo=null;		//불러온 정수장 코드
+	static String fcltyMngNo = null;		//불러온 정수장 코드
+	static String fcltyMngNm = null;		//불러온 정수장 이름
 	
 	
 	static String ServiceKey = "jKq7bWPMdGPSHRToLGkotTffxNPQFoZ88H%2FjbH%2BSWSz836fHMXAaKVgKnvtxAHLVWZ0%2FqQzXJIViKEW2jOk1Og%3D%3D";
@@ -49,19 +51,23 @@ public class MainController {
 	static String URL_waterquality;
 	//시간계산해서 5분 전이면 hour-1 값을 시간으로 넣어주기
 	
+	@FXML
 	public void searchAddress() {
 		try {
 			AnchorPane searchPage = FXMLLoader.load(Main.class.getResource("/application/SearchAddress.fxml"));
 			Scene scene = new Scene(searchPage);
-
+			
 			Stage.setScene(scene);
 			Stage.show();
 			Stage.setResizable(false);
+			
+			Stage main = (Stage) lblCurrentPlant.getScene().getWindow();
+			main.close();
 		}	catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	
+	@FXML
 	public static void getTime() {
     	SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
     	SimpleDateFormat format2 = new SimpleDateFormat("HH");
@@ -95,10 +101,9 @@ public class MainController {
 
 	}
 	@FXML
-	public static void getPlantData()
+	public static void getPlantDataM()
 	{
 
-		
 		StringBuilder sb = new StringBuilder(); 		//url 조합을 위한 쿼리문
 		URL_waterquality=sb.append("http://apis.data.go.kr/B500001/rwis/waterQuality/list")
 						.append("?serviceKey=" + ServiceKey)
@@ -111,8 +116,6 @@ public class MainController {
 		System.out.println(date);
 		System.out.println(hour);
 		System.out.println(URL_waterquality);
-		
-		String fcltyMngNm = null;
 		
         try {
         	// 자신의 static 매소드를 가지고 객체를 생성 : 싱글톤 패턴
@@ -128,12 +131,16 @@ public class MainController {
         		Node nNode = nList.item(temp);
 				if(nNode.getNodeType() == Node.ELEMENT_NODE){
 					Element eElement = (Element) nNode;
-					lblCurrentPlant.setText(application.getAPIData.getTagValue("fcltyMngNm", eElement));
+					fcltyMngNm=application.getAPIData.getTagValue("fcltyMngNm", eElement);
 					//fcltyMngNm=application.getAPIData.getTagValue("fcltyMngNm", eElement).toString();
 					System.out.println(application.getAPIData.getTagValue("fcltyMngNm", eElement));
+					System.out.println(fcltyMngNm);
 				}
         	}   
         } catch(Exception e) { 
-        	e.printStackTrace(); }
+        	e.printStackTrace();
+        }
+        
+        lblCurrentPlant.setText(fcltyMngNm);
 	}
 }
