@@ -7,16 +7,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<AnchorPane fx:id="Mainanchorpane" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
-      <AnchorPane layoutX="10.0" prefHeight="800.0" prefWidth="500.0">
+      <AnchorPane layoutX="10.0" prefHeight="800.0" prefWidth="500.0" stylesheets="@application.css">
          <children>
             <ImageView fx:id="imgWaterStatus" fitHeight="230.0" fitWidth="320.0" layoutX="97.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../sampleimage.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" prefHeight="50.0" prefWidth="500.0" text="우리집 수돗물 마셔도 될까?">
+            <Label fx:id="lblTitle" alignment="CENTER" prefHeight="50.0" prefWidth="500.0" text="우리집 수돗물 마셔도 될까?">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
@@ -27,9 +27,9 @@
                </font>
             </Label>
             <Label fx:id="lblSurveyTime" layoutX="40.0" layoutY="460.0" prefHeight="30.0" prefWidth="420.0" text="'수질정보측정시간' 기준" />
-            <Label alignment="CENTER" layoutX="40.0" layoutY="510.0" prefHeight="30.0" prefWidth="130.0" text="잔류염소" />
-            <Label alignment="CENTER" layoutX="185.0" layoutY="510.0" prefHeight="30.0" prefWidth="130.0" text="pH" />
-            <Label alignment="CENTER" layoutX="330.0" layoutY="510.0" prefHeight="30.0" prefWidth="130.0" text="탁도" />
+            <Label fx:id="lblcl" alignment="CENTER" layoutX="40.0" layoutY="510.0" prefHeight="30.0" prefWidth="130.0" text="잔류염소" />
+            <Label fx:id="lblph" alignment="CENTER" layoutX="185.0" layoutY="510.0" prefHeight="30.0" prefWidth="130.0" text="pH" />
+            <Label fx:id="lbltb" alignment="CENTER" layoutX="330.0" layoutY="510.0" prefHeight="30.0" prefWidth="130.0" text="탁도" />
             <ImageView fx:id="imgclVal" fitHeight="130.0" fitWidth="130.0" layoutX="40.0" layoutY="566.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../sampleimage.png" />

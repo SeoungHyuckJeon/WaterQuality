@@ -5,12 +5,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.text.Font;
 
 
 public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
+		Font.loadFont(getClass().getResourceAsStream("Jua-Regular.ttf"), 10);
+		
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("/application/Waterquality.fxml"));
 			Scene scene = new Scene(root);
