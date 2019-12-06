@@ -100,7 +100,7 @@ public class MainController implements Initializable{
 		}
     	else	date = format1.format(time);
 		hour=Integer.toString(h);
-
+		application.WaterData.date=date+" "+hour+"Ω√ ±‚¡ÿ";
 	}
 	@FXML
 	public static void getPlantDataM()
@@ -134,8 +134,10 @@ public class MainController implements Initializable{
 				if(nNode.getNodeType() == Node.ELEMENT_NODE){
 					Element eElement = (Element) nNode;
 					application.WaterData.fcltyMngNm=application.getAPIData.getTagValue("fcltyMngNm", eElement);
-					//fcltyMngNm=application.getAPIData.getTagValue("fcltyMngNm", eElement).toString();
-					System.out.println(application.getAPIData.getTagValue("fcltyMngNm", eElement));
+					application.WaterData.fcltyAddr=application.getAPIData.getTagValue("fcltyAddr", eElement);
+					application.WaterData.clVal=application.getAPIData.getTagValue("clVal", eElement);
+					application.WaterData.phVal=application.getAPIData.getTagValue("phVal", eElement);
+					application.WaterData.tbVal=application.getAPIData.getTagValue("tbVal", eElement);
 				}
         	}   
         } catch(Exception e) { 
@@ -146,6 +148,7 @@ public class MainController implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		lblCurrentPlant.setText(application.WaterData.fcltyMngNm);
-		
+		lblPlantAddress.setText(application.WaterData.fcltyAddr);
+		lblSurveyTime.setText(application.WaterData.date);
 	}
 }
