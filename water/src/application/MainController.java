@@ -28,8 +28,6 @@ public class MainController implements Initializable{
 	@FXML
 	private Label lblCurrentPlant;		//정수장 이름
 	@FXML
-	private Label lblPlantAddress;		//정수장 주소
-	@FXML
 	private Label lblSurveyTime;		//측정 시간
 	@FXML
 	private ImageView imgWaterStatus;	//전체 등급
@@ -148,7 +146,6 @@ public class MainController implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		lblCurrentPlant.setText(application.WaterData.fcltyMngNm);
-		lblPlantAddress.setText(application.WaterData.fcltyAddr);
 		lblSurveyTime.setText(application.WaterData.date);
 	}
 }
