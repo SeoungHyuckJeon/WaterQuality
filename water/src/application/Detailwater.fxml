@@ -1,10 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
    <children>
-      <AnchorPane prefHeight="600.0" prefWidth="500.0" />
+      <AnchorPane fx:id="anchorpaneDetail" prefHeight="500.0" prefWidth="400.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" layoutX="50.0" layoutY="50.0" prefHeight="50.0" prefWidth="100.0" text="정수장명" textFill="WHITE">
+               <effect>
+                  <DropShadow color="#5f9fee" height="28.42" radius="14.08" spread="0.94" width="29.9" />
+               </effect>
+               <font>
+                  <Font name="Expo M" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="50.0" layoutY="100.0" prefHeight="50.0" prefWidth="100.0" text="정수장 주소" textFill="WHITE">
+               <effect>
+                  <DropShadow color="#5f9fee" height="28.42" radius="14.08" spread="0.94" width="29.9" />
+               </effect>
+               <font>
+                  <Font name="Expo M" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="50.0" layoutY="150.0" prefHeight="50.0" prefWidth="100.0" text="시설관리번호" textFill="WHITE">
+               <effect>
+                  <DropShadow color="#5f9fee" height="28.42" radius="14.08" spread="0.94" width="29.9" />
+               </effect>
+               <font>
+                  <Font name="Expo M" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="50.0" layoutY="200.0" prefHeight="50.0" prefWidth="100.0" text="수질측정시간" textFill="WHITE">
+               <effect>
+                  <DropShadow color="#5f9fee" height="28.42" radius="14.08" spread="0.94" width="29.9" />
+               </effect>
+               <font>
+                  <Font name="Expo M" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="50.0" layoutY="250.0" prefHeight="50.0" prefWidth="100.0" text="용수 구분" textFill="WHITE">
+               <effect>
+                  <DropShadow color="#5f9fee" height="28.42" radius="14.08" spread="0.94" width="29.9" />
+               </effect>
+               <font>
+                  <Font name="Expo M" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="50.0" layoutY="300.0" prefHeight="50.0" prefWidth="100.0" text="잔류 염소" textFill="WHITE">
+               <effect>
+                  <DropShadow color="#5f9fee" height="28.42" radius="14.08" spread="0.94" width="29.9" />
+               </effect>
+               <font>
+                  <Font name="Expo M" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="50.0" layoutY="350.0" prefHeight="50.0" prefWidth="100.0" text="pH" textFill="WHITE">
+               <effect>
+                  <DropShadow color="#5f9fee" height="28.42" radius="14.08" spread="0.94" width="29.9" />
+               </effect>
+               <font>
+                  <Font name="Expo M" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="50.0" layoutY="400.0" prefHeight="50.0" prefWidth="100.0" text="탁도" textFill="WHITE">
+               <effect>
+                  <DropShadow color="#5f9fee" height="28.42" radius="14.08" spread="0.94" width="29.9" />
+               </effect>
+               <font>
+                  <Font name="Expo M" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDetailPlantName" layoutX="180.0" layoutY="50.0" prefHeight="50.0" prefWidth="210.0" text="정수장명">
+               <font>
+                  <Font name="Expo M" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDetailaddress" layoutX="180.0" layoutY="100.0" prefHeight="50.0" prefWidth="210.0" text="정수장주소">
+               <font>
+                  <Font name="Expo M" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDetailnumber" layoutX="180.0" layoutY="150.0" prefHeight="50.0" prefWidth="210.0" text="시설관리번호">
+               <font>
+                  <Font name="Expo M" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDetaildate" layoutX="180.0" layoutY="200.0" prefHeight="50.0" prefWidth="210.0" text="수질측정시간">
+               <font>
+                  <Font name="Expo M" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDetaildiv" layoutX="180.0" layoutY="250.0" prefHeight="50.0" prefWidth="210.0" text="용수 구분">
+               <font>
+                  <Font name="Expo M" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDetailclval" layoutX="180.0" layoutY="300.0" prefHeight="50.0" prefWidth="210.0" text="잔유 염소">
+               <font>
+                  <Font name="Expo M" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDetailphval" layoutX="180.0" layoutY="350.0" prefHeight="50.0" prefWidth="210.0" text="ph">
+               <font>
+                  <Font name="Expo M" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDetailtbval" layoutX="180.0" layoutY="400.0" prefHeight="50.0" prefWidth="210.0" text="탁도">
+               <font>
+                  <Font name="Expo M" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
