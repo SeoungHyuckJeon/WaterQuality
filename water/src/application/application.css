@@ -1,14 +1,13 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
 
+/* Main */
 #lblTitle {
-	-fx-font-family: "Jua-Regular";
 }
 
 #lblCurrentPlant {
 }
 
 #lblSurveyTime {
-	-fx-font-size: 10pt;
 }
 
 #lblcl {
@@ -23,3 +22,8 @@
 #Mainanchorpane {
 	-fx-background-color: #ffffff;
 }
+
+/* Search */
+
+
+/* Detail */

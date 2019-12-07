@@ -37,7 +37,8 @@ public class MainController implements Initializable{
 	@FXML
 	private ImageView imgtbVal;			//Å¹µµ µî±Þ
 	
-	public static Stage Stage = new Stage();
+	public static Stage searchStage = new Stage();
+	public Stage detailStage = new Stage();
 	
 	static String date;
 	static String hour;
@@ -56,9 +57,9 @@ public class MainController implements Initializable{
 			AnchorPane searchPage = FXMLLoader.load(Main.class.getResource("/application/SearchAddress.fxml"));
 			Scene scene = new Scene(searchPage);
 			
-			Stage.setScene(scene);
-			Stage.show();
-			Stage.setResizable(false);
+			searchStage.setScene(scene);
+			searchStage.show();
+			searchStage.setResizable(false);
 			
 			Stage main = (Stage) lblCurrentPlant.getScene().getWindow();
 			main.close();
@@ -143,7 +144,23 @@ public class MainController implements Initializable{
         	e.printStackTrace();
         }
 	}
+	
+	@FXML
+	public void btnDetailOpen() {
 
+		try {
+			AnchorPane detailPage = FXMLLoader.load(Main.class.getResource("/application/Detailwater.fxml"));
+			Scene scene = new Scene(detailPage);
+			
+			detailStage.setScene(scene);
+			detailStage.show();
+			detailStage.setResizable(false);
+			
+		}	catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		lblCurrentPlant.setText(application.WaterData.fcltyMngNm);

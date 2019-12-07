@@ -95,7 +95,7 @@ public class SearchboxController {
 		if(event.getClickCount()>1 && tableview_WPP.getSelectionModel().getSelectedIndex()!=-1) {	//셀이 선택되어있고, 더블클릭했을때 이벤트
 			application.MainController.fcltyMngNo=fcltyMngNo.get(tableview_WPP.getSelectionModel().getSelectedIndex());	//정수장 번호 넘겨줌
 			
-			application.MainController.Stage.close();		//검색창 닫기
+			application.MainController.searchStage.close();		//검색창 닫기
 			application.MainController.getTime();			//현재 시간 불러오기
 			application.MainController.getPlantDataM();		//선택한 정수장 수질 불러오기
 			
