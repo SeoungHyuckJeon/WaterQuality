@@ -135,6 +135,8 @@ public class MainController implements Initializable{
 					application.WaterData.clVal=application.getAPIData.getTagValue("clVal", eElement);
 					application.WaterData.phVal=application.getAPIData.getTagValue("phVal", eElement);
 					application.WaterData.tbVal=application.getAPIData.getTagValue("tbVal", eElement);
+					application.WaterData.liIndDivName=application.getAPIData.getTagValue("liIndDivName", eElement);
+					application.WaterData.fcltyMngNo=application.getAPIData.getTagValue("fcltyMngNo", eElement);
 				}
         	}   
         } catch(Exception e) { 
