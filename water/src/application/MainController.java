@@ -113,9 +113,6 @@ public class MainController implements Initializable{
 						.append("&edTm=" + hour)
 						.append("&fcltyMngNo=" + fcltyMngNo)
 						.append("&liIndDiv=1&numOfRows=1&pageNo=1").toString();	//선택 = 생활용수
-		System.out.println(date);
-		System.out.println(hour);
-		System.out.println(URL_waterquality);
 		
         try {
         	// 자신의 static 매소드를 가지고 객체를 생성 : 싱글톤 패턴
@@ -147,8 +144,8 @@ public class MainController implements Initializable{
 						application.WaterData.phVal="0"+application.WaterData.phVal;
 					if(application.WaterData.tbVal.startsWith("."))
 						application.WaterData.tbVal="0"+application.WaterData.tbVal;
+					
 					//이미지 정보 데이터에 전달
-					System.out.println(Float.parseFloat(application.WaterData.clVal));
 					if(Float.parseFloat(application.WaterData.clVal)>=0.2 && Float.parseFloat(application.WaterData.clVal)<=4) {
 						application.WaterData.imgcl=new Image("file:good_hand.png");
 						cl=true;

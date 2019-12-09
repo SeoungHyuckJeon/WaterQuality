@@ -41,7 +41,6 @@ public class SearchboxController {
 	ObservableList<wppModel> wppList = FXCollections.observableArrayList();
 	@FXML
 	public void ClickedbtnSearch() {		//검색 버튼 클리시
-		System.out.println("btn Pressed");
 		wppList.clear();				//테이블 내용 초기화
 		fcltyMngNo.clear();				//배열 초기화
 		getPlantDataS(application.MainController.URL_supplylgld);
