@@ -19,6 +19,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -50,7 +51,6 @@ public class MainController implements Initializable{
 			+ ServiceKey +"&numOfRows=758&pageNo=1";
 	static String URL_waterquality;
 	//시간계산해서 5분 전이면 hour-1 값을 시간으로 넣어주기
-	
 	@FXML
 	public void searchAddress() {
 		try {
@@ -130,7 +130,9 @@ public class MainController implements Initializable{
         	{
         		Node nNode = nList.item(temp);
 				if(nNode.getNodeType() == Node.ELEMENT_NODE){
-					Element eElement = (Element) nNode;
+					Boolean cl=false,ph=false,tb= false;	//전체 상태 이미지 표현하기 위한 불타입 변수
+					
+					Element eElement = (Element) nNode;		//데이터 읽어와서 넘겨주기
 					application.WaterData.fcltyMngNm=application.getAPIData.getTagValue("fcltyMngNm", eElement);
 					application.WaterData.fcltyAddr=application.getAPIData.getTagValue("fcltyAddr", eElement);
 					application.WaterData.clVal=application.getAPIData.getTagValue("clVal", eElement);
@@ -138,6 +140,35 @@ public class MainController implements Initializable{
 					application.WaterData.tbVal=application.getAPIData.getTagValue("tbVal", eElement);
 					application.WaterData.liIndDivName=application.getAPIData.getTagValue("liIndDivName", eElement);
 					application.WaterData.fcltyMngNo=application.getAPIData.getTagValue("fcltyMngNo", eElement);
+					
+					if(application.WaterData.clVal.startsWith("."))	//xml데이터는 '.xxxx' 형태로 존재하므로 앞에 0을 붙여준다.
+						application.WaterData.clVal="0"+application.WaterData.clVal;
+					if(application.WaterData.phVal.startsWith("."))
+						application.WaterData.phVal="0"+application.WaterData.phVal;
+					if(application.WaterData.tbVal.startsWith("."))
+						application.WaterData.tbVal="0"+application.WaterData.tbVal;
+					//이미지 정보 데이터에 전달
+					System.out.println(Float.parseFloat(application.WaterData.clVal));
+					if(Float.parseFloat(application.WaterData.clVal)>=0.2 && Float.parseFloat(application.WaterData.clVal)<=4) {
+						application.WaterData.imgcl=new Image("file:good_hand.png");
+						cl=true;
+					}
+					else application.WaterData.imgcl=new Image("file:bad_hand.png");
+					
+					if(Float.parseFloat(application.WaterData.phVal)>=6.5 && Float.parseFloat(application.WaterData.phVal)<=9.5) {
+						application.WaterData.imgph=new Image("file:good_hand.png");
+						ph=true;
+					}
+					else application.WaterData.imgph=new Image("file:bad_hand.png");
+					
+					if(Float.parseFloat(application.WaterData.tbVal)<=0.5) {
+						application.WaterData.imgtb=new Image("file:good_hand.png");
+						tb=true;
+					}
+					else application.WaterData.imgtb=new Image("file:bad_hand.png");
+					//전부 상태가 좋음이면 전체 상태 좋음으로 전달
+					if(cl&&ph&&tb) 	application.WaterData.imgwater=new Image("file:good_raindrop.png");
+					else	application.WaterData.imgwater=new Image("file:bad_raindrop.png");
 				}
         	}   
         } catch(Exception e) { 
@@ -160,10 +191,14 @@ public class MainController implements Initializable{
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		lblCurrentPlant.setText(application.WaterData.fcltyMngNm);
 		lblSurveyTime.setText(application.WaterData.date);
+		imgWaterStatus.setImage(application.WaterData.imgwater);
+		imgclVal.setImage(application.WaterData.imgcl);
+		imgpHVal.setImage(application.WaterData.imgph);
+		imgtbVal.setImage(application.WaterData.imgtb);
 	}
 }
