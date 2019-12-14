@@ -24,6 +24,11 @@
 }
 
 /* Search */
-
+#anchorpaneSearch {
+	-fx-background-color: #ffffff;
+}
 
 /* Detail */
+#anchorpaneDetail {
+	-fx-background-color: #ffffff;
+}

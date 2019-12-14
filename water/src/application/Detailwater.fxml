@@ -5,9 +5,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DetailController">
+<AnchorPane fx:id="anchorpaneDetail" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DetailController">
    <children>
-      <AnchorPane fx:id="anchorpaneDetail" prefHeight="500.0" prefWidth="400.0">
+      <AnchorPane prefHeight="500.0" prefWidth="400.0">
          <children>
             <Label alignment="CENTER_RIGHT" layoutX="50.0" layoutY="50.0" prefHeight="50.0" prefWidth="100.0" text="정수장명" textFill="WHITE">
                <effect>
