@@ -18,7 +18,7 @@
             </ImageView>
             <Label fx:id="lblTitle" alignment="CENTER" prefHeight="50.0" prefWidth="500.0" text="우리집 수돗물 마셔도 될까?">
                <font>
-                  <Font name="Expo M" size="15.0" />
+                  <Font name="Expo M" size="18.0" />
                </font>
             </Label>
             <Label fx:id="lblCurrentPlant" alignment="CENTER" layoutY="50.0" onMouseClicked="#searchAddress" prefHeight="100.0" prefWidth="500.0" text="정수장을 선택해주십시오">
@@ -28,19 +28,19 @@
             </Label>
             <Label fx:id="lblSurveyTime" layoutX="40.0" layoutY="460.0" prefHeight="30.0" prefWidth="420.0" text="수질정보측정시간">
                <font>
-                  <Font name="Expo M" size="12.0" />
+                  <Font name="Expo M" size="20.0" />
                </font></Label>
             <Label fx:id="lblcl" alignment="CENTER" layoutX="40.0" layoutY="510.0" prefHeight="30.0" prefWidth="130.0" text="잔류염소">
                <font>
-                  <Font name="Expo M" size="12.0" />
+                  <Font name="Expo M" size="15.0" />
                </font></Label>
             <Label fx:id="lblph" alignment="CENTER" layoutX="185.0" layoutY="510.0" prefHeight="30.0" prefWidth="130.0" text="pH">
                <font>
-                  <Font name="Expo M" size="12.0" />
+                  <Font name="Expo M" size="15.0" />
                </font></Label>
             <Label fx:id="lbltb" alignment="CENTER" layoutX="330.0" layoutY="510.0" prefHeight="30.0" prefWidth="130.0" text="탁도">
                <font>
-                  <Font name="Expo M" size="12.0" />
+                  <Font name="Expo M" size="15.0" />
                </font></Label>
             <ImageView fx:id="imgclVal" fitHeight="130.0" fitWidth="130.0" layoutX="47.0" layoutY="566.0" pickOnBounds="true" preserveRatio="true">
                <image>
