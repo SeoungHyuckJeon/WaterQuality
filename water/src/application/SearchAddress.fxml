@@ -12,7 +12,7 @@
          <children>
             <TextField fx:id="textfield_SearchBox" layoutX="14.0" layoutY="20.0" onKeyPressed="#PressedSearchBox" prefHeight="40.0" prefWidth="400.0" promptText="주소를 입력하세요." />
             <Button fx:id="btnSearch" layoutX="414.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#ClickedbtnSearch" prefHeight="40.0" prefWidth="72.0" text="검색" />
-            <TableView fx:id="tableview_WPP" layoutX="14.0" layoutY="70.0" onMouseClicked="#CellDoubleClick" prefHeight="410.0" prefWidth="472.0">
+            <TableView fx:id="tableview_WPP" layoutX="14.0" layoutY="70.0" onMouseClicked="#CellDoubleClick" prefHeight="410.0" prefWidth="472.0" stylesheets="@application.css">
                <columns>
                   <TableColumn fx:id="column_Address" prefWidth="322.0" resizable="false" text="주소" />
                   <TableColumn fx:id="column_Plant" prefWidth="150.0" resizable="false" text="정수장명" />

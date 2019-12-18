@@ -1,22 +1,17 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
 
 /* Main */
-#lblTitle {
+#btnDetailOpen {
+	-fx-background-color: #ffffff;
+	-fx-border-color: #b0b0b0;
+}
+#btnDetailOpen:pressed {
+	-fx-background-color: #b0b0b0;
+	-fx-border-color: #b0b0b0;
 }
 
-#lblCurrentPlant {
-}
-
-#lblSurveyTime {
-}
-
-#lblcl {
-}
-
-#lblph {
-}
-
-#lbltb {
+#lblCurrentPlant:pressed {
+	-fx-background-color: #b0b0b0;
 }
 
 #Mainanchorpane {
@@ -26,6 +21,29 @@
 /* Search */
 #anchorpaneSearch {
 	-fx-background-color: #ffffff;
+}
+
+#textfield_SearchBox {
+	-fx-background-color: #ffffff;
+	-fx-border-color: #b0b0b0;
+}
+
+#btnSearch {
+	-fx-background-color: #ffffff;
+	-fx-border-color: #b0b0b0;
+
+}
+#btnSearch:pressed {
+	-fx-background-color: #b0b0b0;
+	-fx-border-color: #b0b0b0;
+}
+
+
+#tableview_WPP { 
+	-fx-base: #ffffff; 
+	-fx-control-inner-background: #ffffff; 
+	-fx-background-color: #ffffff;
+	-fx-border-color: #b0b0b0;
 }
 
 /* Detail */

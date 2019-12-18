@@ -57,7 +57,7 @@
                   <Image url="@../../question_mark.png" />
                </image>
             </ImageView>
-            <Button layoutY="730.0" mnemonicParsing="false" onAction="#btnDetailOpen" prefHeight="70.0" prefWidth="500.0" text="상세보기" AnchorPane.bottomAnchor="-4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="731.0">
+            <Button fx:id="btnDetailOpen" layoutY="730.0" mnemonicParsing="false" onAction="#btnDetailOpen" prefHeight="70.0" prefWidth="500.0" text="상세보기" AnchorPane.bottomAnchor="-4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="731.0">
                <font>
                   <Font name="Expo M" size="20.0" />
                </font></Button>
